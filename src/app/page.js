@@ -43,12 +43,14 @@ export default function Home() {
     const length = num.length;
     const arrNum = num.split("");
     let triangle = "";
-    for (let index = 0; index < length; index++) {}
-    // let triangle = "";
-    // for (let index = 1; index <= num; index++) {
-    //   triangle += '${index.toString().padEnd(index, "0")}\n';
-    // }
-    setGeneratedNumber(arrNum[2]);
+    for (let index = 0; index < length; index++) {
+      triangle += arrNum[index];
+      for (let x = 0; x <= index; x++) {
+        triangle += "0";
+      }
+      triangle += `\n`;
+    }
+    setGeneratedNumber(triangle);
   };
   return (
     <main className={styles.main}>
